@@ -1,1 +1,26 @@
+#!/bin/bash
+#Week6 Script
 
+#Check system's runlevel
+who -r
+
+#Change direcotry 
+cd /etc/systemd
+
+#View all unit's dependencies 
+systemctl show --all
+
+#Check the current systemd comfiguration
+systemctl -p UnitPath show 
+
+#Show lists os active units 
+systemctl list-untis
+
+#Get dev-mqueue.mount as a status 
+systemctl status dev-mqueue.mount
+
+#Display recent information from thw unit's journal 
+journalctl _SYSTEMD_UNIT=dev-mqueue.mount
+
+#Check on current job 
+systemctl list-jobs
